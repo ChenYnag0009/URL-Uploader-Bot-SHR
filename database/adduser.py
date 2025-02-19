@@ -22,4 +22,4 @@ async def AddUser(bot: Client, update: Message):
         log_info += "\nUser Link: " + update.from_user.mention
         
         # Send log message to the log channel
-        await bot.send_message(Config.TECH_VJ_LOG_CHANNEL, LOG_TEXT_P.format(update.from_user.id, update.from_user.mention))
+        await bot.send_message(Config.TECH_VJ_LOG_CHANNEL, LOG_TEXT_P.format(update.from_user.id, update.from_user.mention)
