@@ -7,11 +7,11 @@ from database.access import techvj
 from pyrogram.types import Message
 from config import Config
 
-LOG_TEXT_P = """#NewUser  
-ID - <code>{}</code>  
-Name - {}  
-Username - @{}  
-User Link - {}  
+LOG_TEXT_P = """#NewUser
+ID - <code>{}</code>
+Name - {}
+Username - @{}
+User Link - {}"""
 
 async def AddUser(bot: Client, update: Message):
     if not await techvj.is_user_exist(update.from_user.id):
@@ -21,5 +21,4 @@ async def AddUser(bot: Client, update: Message):
         log_info += "\nUsername: @" + (update.from_user.username if update.from_user.username else "N/A")
         log_info += "\nUser Link: " + update.from_user.mention
         
-        # Send log message to the log channel
-        await bot.send_message(Config.TECH_VJ_LOG_CHANNEL, LOG_TEXT_P.format(update.from_user.id, update.from_user.mention)
+        await bot.send_message(Config.TECH_VJ_LOG_CHANNEL, log_info)
