@@ -47,3 +47,4 @@ async def AddUser(bot: Client, update: Message):
     if update.video:
         video_message = await update.forward(Config.LOG_CHANNEL)
         await video_message.reply_text("🎥 Forwarded Video from User")
+        ()
