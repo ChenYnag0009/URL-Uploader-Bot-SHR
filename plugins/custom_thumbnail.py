@@ -19,19 +19,19 @@ from helper_funcs.help_Nekmo_ffmpeg import take_screen_shot
 
 @Tech_VJ.on_message(filters.private & filters.photo)
 async def save_photo(bot, update):
-    await AddUser(bot, update)
+    #await AddUser(bot, update)
     await techvj.set_thumbnail(update.from_user.id, thumbnail=update.photo.file_id)
     await bot.send_message(chat_id=update.chat.id, text=Translation.TECH_VJ_SAVED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.id)
 
 @Tech_VJ.on_message(filters.private & filters.command("delthumbnail"))
 async def delthumbnail(bot, update):
-    await AddUser(bot, update)
+    #await AddUser(bot, update)
     await techvj.set_thumbnail(update.from_user.id, thumbnail=None)
     await bot.send_message(chat_id=update.chat.id, text=Translation.TECH_VJ_DEL_ETED_CUSTOM_THUMB_NAIL, reply_to_message_id=update.id)
 
 @Tech_VJ.on_message(filters.private & filters.command("viewthumbnail") )
 async def viewthumbnail(bot, update):
-    await AddUser(bot, update)
+    #await AddUser(bot, update)
     thumbnail = await techvj.get_thumbnail(update.from_user.id)
     if thumbnail is not None:
         await bot.send_photo(
