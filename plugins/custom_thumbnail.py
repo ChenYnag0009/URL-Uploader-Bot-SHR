@@ -11,7 +11,7 @@ from config import Config
 from pyrogram import filters
 from translation import Translation
 from database.access import techvj
-from database.adduser import AddUser
+#from database.adduser import AddUser
 from pyrogram import Client as Tech_VJ
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
