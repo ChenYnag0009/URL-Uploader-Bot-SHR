@@ -15,7 +15,7 @@ from config import Config
 from translation import Translation
 from utils import verify_user, check_token
 from pyrogram import filters, enums
-from database.adduser import AddUser
+#from database.adduser import AddUser
 from plugins.forcesub import handle_force_sub
 from pyrogram import Client as Tech_VJ
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
@@ -26,7 +26,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 @Tech_VJ.on_message(filters.private & filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
-    await AddUser(bot, update)
+    #await AddUser(bot, update)
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.TECH_VJ_HELP_TEXT,
@@ -46,7 +46,7 @@ async def start(bot, update):
     if len(update.command) != 2:
       
     # logger.info(update)
-        await AddUser(bot, update)
+        #await AddUser(bot, update)
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.TECH_VJ_START_TEXT.format(update.from_user.mention),
